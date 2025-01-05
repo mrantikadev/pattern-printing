@@ -6,16 +6,21 @@ void ok(int n);
 void elmas(int n);
 
 int main() {
-	int boyut;
-	while(boyut<=1) {
+	char quit;
+	while (quit != 'q') {
+		int boyut;
 		cout<<"Cizilecek sekiller icin boyut giriniz: ";
 		cin>>boyut;
+		if (boyut > 0) {
+			kutu(boyut);
+			cout<<endl;
+			ok(boyut);
+			cout<<endl;
+			elmas(boyut);
+			cout << "Cikis icin q'ya basin." << endl;
+			cin >> quit;
+		}
 	}
-	kutu(boyut);
-	cout<<endl;
-	ok(boyut);
-	cout<<endl;
-	elmas(boyut);
 	return 0;
 }
 void kutu(int n) {
